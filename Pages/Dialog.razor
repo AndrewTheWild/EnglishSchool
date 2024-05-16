@@ -1,0 +1,35 @@
+﻿<MudDialog @bind-IsOpen="@isRegistrationDialogOpen" MaxWidth="MaxWidth.Small">
+    <DialogContent> 
+        <MudForm @ref="registrationForm">
+            <MudTextField Label="Ім'я" @bind-Value="registrationModel.FirstName" Required="true" />
+            <MudTextField Label="Прізвище" @bind-Value="registrationModel.LastName" Required="true" />
+            <MudTextField Label="Електронна пошта" @bind-Value="registrationModel.Email" Required="true" />
+            <MudTextField Label="Телефон" @bind-Value="registrationModel.Phone" Required="true" />
+            <MudSpacer />
+            <MudSpacer />
+            <MudButton Color="Color.Primary" OnClick="Submit" Variant="Variant.Filled">Відправити</MudButton>
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Secondary" OnClick="Cancel">Закрити</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    private bool isRegistrationDialogOpen;
+    private MudForm registrationForm;
+    private RegistrationModel registrationModel = new();
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
+
+    public class RegistrationModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+    }
+}

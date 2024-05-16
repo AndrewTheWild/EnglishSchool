@@ -1,0 +1,79 @@
+﻿@page "/"
+
+<PageTitle>Онлайн-школа</PageTitle>
+
+<MudContainer Class="mud-container">
+    <MudText Typo="Typo.h1" GutterBottom="true">
+        Школа англійської мови
+    </MudText> 
+</MudContainer>
+
+<MudContainer>
+    <MudPaper Class="d-flex justify-center flex-grow-1 gap-4" Outlined="true">
+        <MudPaper Class="mud-theme-primary pa-16 ma-2" Elevation="2">
+            <MudCard>
+                <MudCardContent>
+                    <MudIcon Icon="@Icons.Material.Filled.ContactMail" />
+                    <MudDivider DividerType="DividerType.Inset" />
+                    <MudText Typo="Typo.body1">Інтерактивні онлайн-уроки англійської мови</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudPaper>
+        <MudPaper Class="mud-theme-primary pa-16 ma-2" Elevation="2">
+            <MudCard>
+                <MudCardContent>
+                    <MudIcon Icon="@Icons.Material.Filled.Contactless" />
+                    <MudDivider DividerType="DividerType.Inset" />
+                    <MudText Typo="Typo.body1">Індивідуальні та групові заняття</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudPaper>
+        <MudPaper Class="mud-theme-primary pa-16 ma-2" Elevation="2">
+            <MudCard>
+                <MudCardContent>
+                    <MudIcon Icon="@Icons.Material.Filled.FamilyRestroom" />
+                    <MudDivider DividerType="DividerType.Inset" />
+                    <MudText Typo="Typo.body2">Для дорослих і дітей</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudPaper>
+    </MudPaper>
+
+</MudContainer>
+<MudContainer Class="mt-16"> 
+   
+    
+    <MudCarousel Class="mud-width-full" Style="height:500px;" ShowArrows="@arrows" ShowBullets="@bullets" EnableSwipeGesture="@enableSwipeGesture" AutoCycle="@autocycle" TData="object">
+        <MudCarouselItem>
+            <MudPaper Class="mud-paper" Elevation="1" Padding="16px">
+                <MudText Typo="Typo.h5" GutterBottom="true">Відеочат із вчителем</MudText>
+                <MudText Typo="Typo.body2">Спілкуйтеся з викладачем англійською в режимі реального часу вже з перших занять через особистий кабінет</MudText>
+                <MudImage Src="https://justschool.me/assets/images/v2/main/room.webp" Alt="Swedish Farm House" Elevation="25" Class="rounded-lg ma-4" />
+            </MudPaper>
+        </MudCarouselItem>
+        
+        <MudCarouselItem>
+            <MudPaper Class="mud-paper" Elevation="1" Padding="16px">
+                <MudText Typo="Typo.h5" GutterBottom="true">Усе корисне в одному місці</MudText>
+                <MudText Typo="Typo.body2">Усі наші матеріали та курси для вивчення англійської мови зібрані на одній зручній платформі: від цікавого контенту до тренувальних і домашніх завдань</MudText>
+                <MudImage Src="https://justschool.me/assets/images/v2/main/self-study.webp" Alt="Swedish Farm House" Elevation="25" Class="rounded-lg ma-4" />
+            </MudPaper>
+        </MudCarouselItem>
+        
+        <MudCarouselItem>
+            <MudPaper Class="mud-paper" Elevation="1" Padding="16px">
+                <MudText Typo="Typo.h5" GutterBottom="true">Англійська в кишені</MudText>
+                <MudText Typo="Typo.body2">Проходьте курси з англійської мови з насолодою через наш мобільний застосунок</MudText>
+                <MudImage Src="https://justschool.me/assets/images/v2/main/materials.webp" Alt="Swedish Farm House" Elevation="25" Class="rounded-lg ma-4" />
+            </MudPaper>
+        </MudCarouselItem>
+    </MudCarousel>
+</MudContainer>
+
+@code {
+    private bool arrows = true;
+    private bool bullets = true;
+    private bool enableSwipeGesture = true;
+    private bool autocycle = true;
+    private Transition transition = Transition.Slide;
+}

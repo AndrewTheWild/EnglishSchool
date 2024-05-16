@@ -1,0 +1,109 @@
+﻿@page "/courses"
+
+@inject IDialogService DialogService
+
+<MudContainer Class="mud-container">
+    <MudText Typo="Typo.h1" GutterBottom="true">
+        Доступні курси
+    </MudText>
+
+    <MudGrid>
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6" GutterBottom="true">Англійська для початківців</MudText>
+                    <MudText Typo="Typo.body2">
+                        Розпочніть свою подорож вивчення англійської мови з нашого курсу для початківців. Вивчайте основи граматики, словникового запасу та вимови.
+                    </MudText>
+                </MudCardContent>
+                <MudCardMedia Image="https://example.com/images/beginner-english.jpg" Alt="Англійська для початківців" Height="140" />
+                <MudCardActions>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="OpenRegistrationDialog">Зареєструватися</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6" GutterBottom="true">Середній рівень англійської</MudText>
+                    <MudText Typo="Typo.body2">
+                        Покращуйте свої навички англійської мови з нашим курсом середнього рівня. Сфокусуйтеся на вдосконаленні мовлення, слухання та письма.
+                    </MudText>
+                </MudCardContent>
+                <MudCardMedia Image="https://example.com/images/intermediate-english.jpg" Alt="Середній рівень англійської" Height="140" />
+                <MudCardActions>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="OpenRegistrationDialog">Зареєструватися</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6" GutterBottom="true">Просунутий рівень англійської</MudText>
+                    <MudText Typo="Typo.body2">
+                        Досконально вивчіть англійську мову з нашим курсом просунутого рівня. Ідеально підходить для тих, хто хоче вдосконалити свої мовні навички.
+                    </MudText>
+                </MudCardContent>
+                <MudCardMedia Image="https://example.com/images/advanced-english.jpg" Alt="Просунутий рівень англійської" Height="140" />
+                <MudCardActions>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="OpenRegistrationDialog">Зареєструватися</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6" GutterBottom="true">Бізнес-англійська</MudText>
+                    <MudText Typo="Typo.body2">
+                        Вивчіть англійську для бізнесу, щоб покращити свої професійні навички. Курс охоплює ділове спілкування, написання електронних листів та проведення презентацій.
+                    </MudText>
+                </MudCardContent>
+                <MudCardMedia Image="https://example.com/images/business-english.jpg" Alt="Бізнес-англійська" Height="140" />
+                <MudCardActions>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="OpenRegistrationDialog">Зареєструватися</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6" GutterBottom="true">Англійська для дітей</MudText>
+                    <MudText Typo="Typo.body2">
+                        Наш курс англійської для дітей пропонує веселі та інтерактивні уроки, які допомагають малечі швидко опановувати нову мову.
+                    </MudText>
+                </MudCardContent>
+                <MudCardMedia Image="https://example.com/images/kids-english.jpg" Alt="Англійська для дітей" Height="140" />
+                <MudCardActions>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="OpenRegistrationDialog">Зареєструватися</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4">
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h6" GutterBottom="true">Інтенсивний курс англійської</MudText>
+                    <MudText Typo="Typo.body2">
+                        Наш інтенсивний курс англійської допоможе вам швидко покращити свої навички завдяки інтенсивним заняттям та практиці.
+                    </MudText>
+                </MudCardContent>
+                <MudCardMedia Image="https://example.com/images/intensive-english.jpg" Alt="Інтенсивний курс англійської" Height="140" />
+                <MudCardActions> 
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="OpenRegistrationDialog">Зареєструватися</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</MudContainer>  
+
+@code { 
+    private void OpenRegistrationDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<Dialog>("Реєстрація на курс", options);
+    } 
+}
